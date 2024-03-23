@@ -3,6 +3,10 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
+import wordRouter from './routes/word.js'
+import userRouter from './routes/user.js'
+import authRouter from './routes/auth.js'
+
 dotenv.config()
 const app = express()
 
@@ -13,6 +17,11 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+
+// routes
+app.use('/api/auth', authRouter)
+app.use('/api/user', userRouter)
+app.use('/api/word', wordRouter)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
