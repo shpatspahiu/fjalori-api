@@ -3,7 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
-import wordRouter from './routes/word.js'
+import cardRouter from './routes/card.js'
 import userRouter from './routes/user.js'
 import authRouter from './routes/auth.js'
 
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)
-app.use('/api/word', wordRouter)
+app.use('/api/card', cardRouter)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const wordSchema = new Schema({
+const cardSchema = new Schema({
   title: {
     type: String,
     minLength: 3,
@@ -26,4 +26,4 @@ const wordSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model("Word", wordSchema)
+module.exports = mongoose.model("Card", cardSchema)
