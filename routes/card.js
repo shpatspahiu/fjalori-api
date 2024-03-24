@@ -1,18 +1,17 @@
 import express from 'express'
 const router = express.Router()
+import { getCards, getCardByID, createCard, deleteCard, updateCard, getCardsByUser } from '../controllers/cardController.js'
 
-router.get('/') // get all cards
+router.get('/', getCards) // get all cards
 
-router.get('/:id') // get card by id
+router.get('/:id', getCardByID) // get card by id
 
-router.post('/') // create new card
+router.post('/', createCard) // create new card
 
-router.delete('/:id') // delete card by id
+router.delete('/:id', deleteCard) // delete card by id
 
-router.put('/:id') // update card by id
+router.put('/:id', updateCard) // update card by id
 
-router.get('/user/:id') // get all cards by user id
-
-
+router.get('/user/:id', getCardsByUser) // get all cards by user id
 
 export default router
